@@ -20,8 +20,8 @@ This MCP server allows Claude (or any MCP client) to access the District Knowled
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd mcp-web-content
+git clone https://github.com/Bcrook123/Engage-zendesk-mcp-server.git
+cd Engage-zendesk-mcp-server
 ```
 
 ### 2. Install Dependencies
@@ -30,33 +30,13 @@ cd mcp-web-content
 npm install
 ```
 
-### 3. Configure Your Credentials
-
-1. Copy the example environment file:
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Edit `.env` and add your Zendesk credentials:
-   ```bash
-   ZENDESK_EMAIL=your-email@district.au
-   ZENDESK_API_TOKEN=your_api_token_here
-   ```
-
-3. **How to get your Zendesk API token:**
-   - Log in to Zendesk Admin Center
-   - Go to **Apps and integrations** > **APIs** > **Zendesk API**
-   - Click **Add API token**
-   - Copy the token and paste it into your `.env` file
-   - **Important:** Save the token securely - you won't be able to see it again!
-
-### 4. Build the Server
+### 3. Build the Server
 
 ```bash
 npm run build
 ```
 
-### 5. Configure Claude Desktop
+### 4. Configure Claude Desktop
 
 Add this to your Claude Desktop config file:
 
@@ -68,24 +48,22 @@ Add this to your Claude Desktop config file:
   "mcpServers": {
     "engage-knowledge-web": {
       "command": "node",
-      "args": ["/ABSOLUTE/PATH/TO/mcp-web-content/build/index.js"],
-      "env": {
-        "ZENDESK_EMAIL": "your-email@district.au",
-        "ZENDESK_API_TOKEN": "your_api_token_here"
-      }
+      "args": ["/ABSOLUTE/PATH/TO/Engage-zendesk-mcp-server/build/index.js"]
     }
   }
 }
 ```
 
 **Important:**
-- Replace `/ABSOLUTE/PATH/TO/` with the actual path to your installation
-- Replace the email and API token with your actual credentials
-- Or, if you set up the `.env` file, the environment variables will be loaded automatically
+- Replace `/ABSOLUTE/PATH/TO/` with the actual path where you cloned the repository
+- Example MacOS: `/Users/yourname/Engage-zendesk-mcp-server/build/index.js`
+- Example Windows: `C:/Users/yourname/Engage-zendesk-mcp-server/build/index.js`
 
-### 6. Restart Claude Desktop
+### 5. Restart Claude Desktop
 
 After adding the configuration, restart Claude Desktop completely.
+
+**Note**: The Zendesk credentials are already configured in the repository - no additional setup needed!
 
 ## Verifying Installation
 
@@ -135,9 +113,9 @@ Search for "publishing workflows" in the knowledge base
 ## Security Notes
 
 **IMPORTANT:**
-- Never commit your `.env` file or credentials to Git
-- Each team member should use their own Zendesk API credentials
-- The `.gitignore` file is configured to prevent accidental credential commits
+- This is a **private repository** - only authorized District team members should have access
+- Zendesk credentials are included in the repository for team convenience
+- Do not share this repository or its contents outside the District team
 - API tokens should be treated as passwords - keep them secure!
 
 ## Troubleshooting
