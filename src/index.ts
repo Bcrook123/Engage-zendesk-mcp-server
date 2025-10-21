@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { config } from "dotenv";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
@@ -8,6 +9,13 @@ import {
   Tool,
 } from "@modelcontextprotocol/sdk/types.js";
 import fetch from "node-fetch";
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
+
+// Load .env file from the package root
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+config({ path: resolve(__dirname, "../.env") });
 
 // Zendesk API Configuration from environment variables
 const CONFIG = {
