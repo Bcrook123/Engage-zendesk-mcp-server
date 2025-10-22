@@ -117,45 +117,9 @@ Search for "publishing workflows" in the knowledge base
 
 **IMPORTANT:**
 - This is a **private repository** - only authorized District team members should have access
-- Zendesk credentials are included in the README setup instructions
-- Keep your Claude Desktop config file secure (it contains the API token)
-- Do not share credentials outside the District team
+- Zendesk credentials are required
 - API tokens should be treated as passwords - keep them secure!
 
-## Troubleshooting
-
-### "Missing required environment variables" error
-
-Make sure you've added the `env` section in your Claude Desktop config with `ZENDESK_EMAIL` and `ZENDESK_API_TOKEN` as shown in the setup instructions above.
-
-### "404 Not Found" errors
-
-- Verify your Zendesk subdomain is correct (default: `districtsd`)
-- Check that your API token is valid and hasn't been revoked
-- Ensure your Zendesk account has permission to access the Help Center API
-
-### Server not showing up in Claude
-
-- Make sure you've restarted Claude Desktop after changing the config
-- Check that the path to `build/index.js` is correct and absolute
-- Verify the build completed successfully with `npm run build`
-
-## Development
-
-To make changes to the server:
-
-1. Edit files in `src/`
-2. Run `npm run build` to compile
-3. Restart Claude Desktop to test changes
-
-## Contributing
-
-This is a private repository for the District team. To suggest improvements:
-
-1. Create a feature branch
-2. Make your changes
-3. Test thoroughly
-4. Submit a pull request
 
 ## License
 
