@@ -48,7 +48,11 @@ Add this to your Claude Desktop config file:
   "mcpServers": {
     "engage-knowledge-web": {
       "command": "node",
-      "args": ["/ABSOLUTE/PATH/TO/Engage-zendesk-mcp-server/build/index.js"]
+      "args": ["/ABSOLUTE/PATH/TO/Engage-zendesk-mcp-server/build/index.js"],
+      "env": {
+        "ZENDESK_EMAIL": "simon@district.au",
+        "ZENDESK_API_TOKEN": "izdmsYWdfMldIA47vy9PCQ4BxIs89viu2KD155hK"
+      }
     }
   }
 }
@@ -58,12 +62,11 @@ Add this to your Claude Desktop config file:
 - Replace `/ABSOLUTE/PATH/TO/` with the actual path where you cloned the repository
 - Example MacOS: `/Users/yourname/Engage-zendesk-mcp-server/build/index.js`
 - Example Windows: `C:/Users/yourname/Engage-zendesk-mcp-server/build/index.js`
+- The credentials are included in the config above - use them as-is
 
 ### 5. Restart Claude Desktop
 
 After adding the configuration, restart Claude Desktop completely.
-
-**Note**: The Zendesk credentials are already configured in the repository - no additional setup needed!
 
 ## Verifying Installation
 
@@ -114,17 +117,16 @@ Search for "publishing workflows" in the knowledge base
 
 **IMPORTANT:**
 - This is a **private repository** - only authorized District team members should have access
-- Zendesk credentials are included in the repository for team convenience
-- Do not share this repository or its contents outside the District team
+- Zendesk credentials are included in the README setup instructions
+- Keep your Claude Desktop config file secure (it contains the API token)
+- Do not share credentials outside the District team
 - API tokens should be treated as passwords - keep them secure!
 
 ## Troubleshooting
 
 ### "Missing required environment variables" error
 
-Make sure you've set `ZENDESK_EMAIL` and `ZENDESK_API_TOKEN` either:
-- In your `.env` file, OR
-- In the Claude Desktop config under the `env` section
+Make sure you've added the `env` section in your Claude Desktop config with `ZENDESK_EMAIL` and `ZENDESK_API_TOKEN` as shown in the setup instructions above.
 
 ### "404 Not Found" errors
 
