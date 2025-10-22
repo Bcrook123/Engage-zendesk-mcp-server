@@ -50,8 +50,8 @@ Add this to your Claude Desktop config file:
       "command": "node",
       "args": ["/ABSOLUTE/PATH/TO/Engage-zendesk-mcp-server/build/index.js"],
       "env": {
-        "ZENDESK_EMAIL": "simon@district.au",
-        "ZENDESK_API_TOKEN": "izdmsYWdfMldIA47vy9PCQ4BxIs89viu2KD155hK"
+        "ZENDESK_EMAIL": "your-zendesk-email@district.au",
+        "ZENDESK_API_TOKEN": "your-zendesk-api-token"
       }
     }
   }
@@ -62,7 +62,7 @@ Add this to your Claude Desktop config file:
 - Replace `/ABSOLUTE/PATH/TO/` with the actual path where you cloned the repository
 - Example MacOS: `/Users/yourname/Engage-zendesk-mcp-server/build/index.js`
 - Example Windows: `C:/Users/yourname/Engage-zendesk-mcp-server/build/index.js`
-- The credentials are included in the config above - use them as-is
+- **Replace the email and API token** with the credentials shared with you privately by the team lead
 
 ### 5. Restart Claude Desktop
 
