@@ -15,7 +15,11 @@ import { dirname, resolve } from "path";
 // Load .env file from the package root
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-config({ path: resolve(__dirname, "../.env") });
+try {
+  config({ path: resolve(__dirname, "../.env") });
+} catch (error) {
+  // Silently ignore dotenv parsing errors - env vars will still load
+}
 
 // Zendesk API Configuration from environment variables
 const CONFIG = {
