@@ -8,4 +8,4 @@ RUN npm install --ignore-scripts
 COPY . .
 RUN npm run build
 
-CMD ["node", "build/index.js"]
+CMD ["node", "dist/index.js"]
